@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .header-outer {
+        @apply w-full h-[100px] top-0 z-[500] flex justify-items-start fixed bg-white dark:bg-gray-700 shadow-md dark:shadow-gray-500
+    }
+
+    .header-inner {
+        @apply w-[80%] m-auto flex items-center text-gray-900 dark:text-white justify-between
+    }
+
+    .select {
+        @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+    }
+
+    .add-to-cart {
+        @apply flex items-center hover:bg-gray-500 dark:hover:bg-gray-200 z-20 w-[80%] m-auto my-2 font-bold py-2 px-4 rounded bg-black text-white dark:bg-white dark:text-black text-xs cursor-pointer;
+    }
+
+    .btn-header {
+        @apply  cursor-pointer
+    }
+
+    .cart-cell {
+        @apply w-[70px] text-center
+    }
+
+    .cart-cell-product {
+        @apply w-[100px] overflow-hidden text-left h-[20px]
+    }
+
+    .cart-header-cell {
+        @apply px-6 py-3
+    }
+
+    .cart-table-cell {
+        @apply px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center
+    }
+}
