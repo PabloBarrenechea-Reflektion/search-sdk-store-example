@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { DarkmodeSwitch } from "@/components/DarkModeSwitcher";
 import Cart from "@/components/Cart";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   return (
@@ -8,10 +9,7 @@ const Header = () => {
       <div className="header-inner">
         <div>
           <Link to={"/"}>
-            <img
-              src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-sitecore?t=sc42h"
-              alt="App logo"
-            />
+            <Logo />
           </Link>
         </div>
         <div className="flex items-center">
