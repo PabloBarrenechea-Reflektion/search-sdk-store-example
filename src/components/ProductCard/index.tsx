@@ -25,7 +25,7 @@ const ProductItemCard = ({
   const onAddToCartClick = (product: any, toast: any) => {
     increaseItemQuantity({
       id: product.id,
-      price: product.price || 10.0,
+      price: product.party_price || 10.0,
       name: product.name,
       image: product.image_url || notFoundImg,
     });
@@ -37,7 +37,7 @@ const ProductItemCard = ({
   };
   return (
     <ProductCard.Root
-      className={`group flex flex-col relative text-center border rounded shadow-[2px_2px_4px] shadow-gray-400 hover:shadow-gray-500 ${className}`}
+      className={`group flex flex-col relative text-center border border-gray-200 dark:border-gray-600 rounded shadow-[2px_2px_4px] shadow-gray-600 hover:shadow-gray-500 ${className}`}
     >
       <div className="mb-2 flex h-[150px] justify-center items-center overflow-hidden group-hover:opacity-75">
         <ProductCard.Image
@@ -65,17 +65,17 @@ const ProductItemCard = ({
             {product.name}
           </a>
         </ProductCard.Name>
+        {product.party_price && (
+          <span className="flex grow justify-center items-end text-sm text-gray-700 dark:text-white font-light mt-3">
+            ${product.party_price}
+          </span>
+        )}
         <button
           className="add-to-cart"
           onClick={() => onAddToCartClick(product, toast)}
         >
           <ShoppingCart /> <label className="ml-2">Add to cart</label>
         </button>
-        {product.price && (
-          <span className="flex grow justify-center items-end text-sm text-gray-700 dark:text-white font-light mt-3">
-            ${product.price}
-          </span>
-        )}
       </ProductCard.Content>
     </ProductCard.Root>
   );

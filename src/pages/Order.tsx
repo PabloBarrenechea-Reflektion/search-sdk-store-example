@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { trackOrderConfirmEvent } from "@sitecore-search/react";
+import { PageController, trackOrderConfirmEvent } from "@sitecore-search/react";
 import { useShoppingCart } from "@/context/shoppingCartContext.tsx";
 
 function makeid(length: number) {
@@ -17,6 +17,7 @@ function makeid(length: number) {
 
 const Order = () => {
   const { cartItems, removeItemFromCart } = useShoppingCart();
+  const store = PageController.getContext().getStore();
   useEffect(() => {
     trackOrderConfirmEvent("product", {
       items: cartItems.map(({ id, quantity, price }) => {
@@ -28,6 +29,7 @@ const Order = () => {
         };
       }),
       orderId: makeid(10),
+      store,
     });
   }, []);
   return (

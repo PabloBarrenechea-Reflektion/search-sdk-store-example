@@ -26,7 +26,7 @@ const SearchFacets = ({ facets }: SearchFacetsProps) => {
         <AccordionFacets.Facet
           facetId={f.name}
           key={f.name}
-          className="block border-b mb-4 pb-4 border-gray-200"
+          className="block border-b mb-4 pb-4 border-gray-200 dark:border-gray-600"
         >
           <AccordionFacets.Header className="flex">
             <AccordionFacets.Trigger className="text-sm md:text-base font-semibold focus:outline-gray-500">
@@ -45,7 +45,7 @@ const SearchFacets = ({ facets }: SearchFacetsProps) => {
                   className="group flex items-center text-sm cursor-pointer"
                 >
                   <AccordionFacets.ItemCheckbox className="form-checkbox flex-none w-5 h-5 border border-gray-300 rounded cursor-pointer transition duration-500 ease-in-out hover:border-heading focus:outline-gray-500 aria-checked:bg-black aria-checked:dark:bg-white aria-checked:hover:bg-heading aria-checked:focus:bg-heading">
-                    <AccordionFacets.ItemCheckboxIndicator className="text-white dark:text-black w-5 h-5 ">
+                    <AccordionFacets.ItemCheckboxIndicator className="text-gray-100 dark:text-black w-5 h-5 ">
                       <CheckIcon />
                     </AccordionFacets.ItemCheckboxIndicator>
                   </AccordionFacets.ItemCheckbox>
