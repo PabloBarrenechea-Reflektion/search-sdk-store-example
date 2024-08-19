@@ -16,6 +16,7 @@ const Cart = () => {
       items: cartItems.map(({ id, quantity, price }) => ({
         id,
         price,
+        finalPrice: price,
         quantity,
       })),
     });
@@ -79,7 +80,10 @@ const Cart = () => {
           <div className="rounded text-gray-700 uppercase bg-gray-50 dark:bg-gray-600 dark:text-gray-400 p-4">
             <div className="flex">
               <label>Total:</label>
-              <span className="ml-4"> ${total}</span>
+              <span className="ml-4">
+                {" "}
+                ${(Math.round(total * 100) / 100).toFixed(2)}
+              </span>
             </div>
             <div className="border-t-gray-400 border-t-2">
               <button

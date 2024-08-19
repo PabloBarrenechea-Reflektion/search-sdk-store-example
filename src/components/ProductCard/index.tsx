@@ -29,7 +29,16 @@ const ProductItemCard = ({
       name: product.name,
       image: product.image_url || notFoundImg,
     });
-    trackAddToCartEvent("product", { items: [{ id: product.id }] });
+    trackAddToCartEvent("product", {
+      items: [
+        {
+          id: product.id,
+          price: product.party_price,
+          finalPrice: product.party_price,
+          quantity: 1,
+        },
+      ],
+    });
     toast({
       title: `$'${product.id}' Added Successfully`,
       variant: "success",

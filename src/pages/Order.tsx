@@ -25,6 +25,7 @@ const Order = () => {
         return {
           id,
           price,
+          finalPrice: price,
           quantity,
         };
       }),
