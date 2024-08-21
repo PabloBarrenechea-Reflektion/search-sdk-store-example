@@ -17,6 +17,10 @@ function makeid(length: number) {
 
 const Order = () => {
   const { cartItems, removeItemFromCart } = useShoppingCart();
+  const total = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0,
+  );
   const store = PageController.getContext().getStore();
   useEffect(() => {
     trackOrderConfirmEvent("product", {
@@ -30,6 +34,8 @@ const Order = () => {
         };
       }),
       orderId: makeid(10),
+      orderTotal: total,
+      orderSubtotal: total,
       store,
     });
   }, []);

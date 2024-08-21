@@ -3,6 +3,7 @@ import { WidgetsProvider } from "@sitecore-search/react";
 import Home from "@/pages/Home";
 import Cart from "@/pages/Cart";
 import Order from "@/pages/Order";
+import Product from "@/pages/Product";
 import Header from "@/layout/Header";
 import { Toaster } from "@/components/ui/toaster";
 import { ShoppingCartProvider } from "@/context/shoppingCartContext";
@@ -26,6 +27,7 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/cart" element={<Cart />} />
                   <Route path="/order" element={<Order />} />
+                  <Route path="/product" element={<Product />} />
                 </Routes>
                 <Toaster />
               </main>

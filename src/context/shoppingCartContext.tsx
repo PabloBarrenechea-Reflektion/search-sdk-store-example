@@ -1,7 +1,7 @@
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { createContext, ReactNode, useContext } from "react";
 
-type CartModel = {
+export type CartModel = {
   id: string;
   name: string;
   image: string;

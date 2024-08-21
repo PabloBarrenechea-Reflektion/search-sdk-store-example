@@ -25,7 +25,10 @@ export function useStore() {
 }
 
 export function StoreProvider({ children }: StoreProviderProps) {
-  const [store, setStore] = useLocalStorage<StoreModel>("store", {});
+  const [store, setStore] = useLocalStorage<StoreModel>("store", {
+    id: "psp_supplier_101",
+    groupId: "AnonymousGroup",
+  });
   store.id && PageController.getContext().setStoreId(store.id);
   store.groupId && PageController.getContext().setStoreGroupId(store.groupId);
   const changeStore = (store: StoreModel) => {

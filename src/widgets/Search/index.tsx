@@ -17,16 +17,8 @@ import SearchFacetsProduct from "@/components/SearchFacets";
 import SearchPagination from "@/components/SearchPagination";
 import SortOrder from "@/components/SortOrder";
 import Spinner from "@/components/Spinner";
+import { ProductModel } from "@types.ts";
 
-type ProductModel = {
-  id: string;
-  name: string;
-  sku: string;
-  image_url: string;
-  price: string;
-  url: string;
-  source_id?: string;
-};
 type SearchResultsProps = {
   defaultSortType?: SearchResultsStoreState["sortType"];
   defaultPage?: SearchResultsStoreState["page"];
