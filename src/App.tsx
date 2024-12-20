@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { WidgetsProvider } from "@sitecore-search/react";
+import { WidgetsProvider, PageController } from "@sitecore-search/react";
 import Home from "@/pages/Home";
 import Cart from "@/pages/Cart";
 import Order from "@/pages/Order";
@@ -10,6 +10,8 @@ import { ShoppingCartProvider } from "@/context/shoppingCartContext";
 import { StoreProvider } from "@/context/storeContext";
 
 function App() {
+  PageController.getContext().setLocaleCountry("us");
+  PageController.getContext().setLocaleLanguage("en");
   return (
     <StoreProvider>
       <ShoppingCartProvider>
